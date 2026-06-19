@@ -22,3 +22,11 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# local agent/runtime artifacts
+.omo/
+.playwright-mcp/
+
+# Impeccable generated artifacts
+.impeccable/live/
+.impeccable/critique/
