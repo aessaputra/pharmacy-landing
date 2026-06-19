@@ -1,24 +1,36 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
-
-const title = `Error 404`;
+const title = 'Halaman tidak ditemukan — Sinar Farma';
 ---
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But don't worry, you can find plenty of other things on our homepage.
+<!doctype html>
+<html lang="id" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main
+      style="min-height:100dvh;display:grid;place-items:center;padding:32px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8faf7;color:#18221a;"
+    >
+      <section style="max-width:640px;text-align:center;">
+        <p style="margin:0 0 16px;color:#526256;font-size:14px;font-weight:600;">Sinar Farma</p>
+        <h1 style="margin:0;color:#1d6b3a;font-size:clamp(64px,16vw,112px);line-height:1;letter-spacing:-0.03em;">
+          404
+        </h1>
+        <p style="margin:24px 0 0;font-size:clamp(24px,5vw,34px);line-height:1.18;font-weight:700;">
+          Halaman ini tidak tersedia.
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
-      </div>
-    </div>
-  </section>
-</Layout>
+        <p style="margin:16px auto 0;max-width:560px;color:#526256;font-size:18px;line-height:1.65;">
+          Tautan yang Anda buka mungkin sudah berubah. Kembali ke beranda untuk melihat informasi umum Sinar Farma.
+        </p>
+        <a
+          href="/"
+          style="display:inline-flex;margin-top:32px;min-height:44px;align-items:center;justify-content:center;border-radius:999px;background:#1d6b3a;padding:0 22px;color:white;font-size:15px;font-weight:700;text-decoration:none;"
+          >Kembali ke beranda</a
+        >
+      </section>
+    </main>
+  </body>
+</html>
