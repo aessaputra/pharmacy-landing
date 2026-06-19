@@ -1,66 +1,66 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Sinar Farma
+  site: 'https://sinar-farma.local'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: false
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Sinar Farma
+    template: '%s — Sinar Farma'
+  description: 'Profil apotek Sinar Farma di Indonesia untuk informasi umum yang ringkas, terpercaya, ramah, dan cepat.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Sinar Farma
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: null
+    site: null
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: id
   textDirection: ltr
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
-      isEnabled: true
+      isEnabled: false
       permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
+    list:
+      isEnabled: false
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: false
+
+    category:
+      isEnabled: false
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: false
+
+    tag:
+      isEnabled: false
+      pathname: 'tag' # Tag main path /tag/some-tag
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
     relatedPostsCount: 4
 
 analytics:
