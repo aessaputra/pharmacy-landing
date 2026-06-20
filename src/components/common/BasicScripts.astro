@@ -10,11 +10,26 @@ import { UI } from 'astrowind:config';
   window.basic_script = true;
 
   function applyTheme(theme) {
+    const root = document.documentElement;
+
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
     }
+  }
+
+  function applyThemeWithoutTransition(theme) {
+    const root = document.documentElement;
+
+    root.dataset.awThemeChanging = 'true';
+    applyTheme(theme);
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        delete root.dataset.awThemeChanging;
+      });
+    });
   }
 
   const initTheme = function () {
@@ -71,8 +86,9 @@ import { UI } from 'astrowind:config';
 
       Observer.removeAnimationDelay();
 
-      document.documentElement.classList.toggle('dark');
-      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      applyThemeWithoutTransition(nextTheme);
+      localStorage.theme = nextTheme;
     });
 
     const screenSize = window.matchMedia('(max-width: 767px)');
