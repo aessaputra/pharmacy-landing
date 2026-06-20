@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
 const metadata = {
@@ -72,13 +73,14 @@ const faqs = [
 
 <Layout metadata={metadata}>
   <section id="beranda" class="relative overflow-hidden scroll-mt-[72px]">
-    <div class="absolute inset-x-0 top-0 -z-10 h-56 bg-primary/8 dark:bg-primary/10" aria-hidden="true"></div>
+    <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-primary/8 dark:bg-primary/10" aria-hidden="true"></div>
+    <div class="absolute left-1/2 top-18 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/14 blur-3xl" aria-hidden="true"></div>
     <div
-      class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:py-22 lg:grid-cols-[minmax(0,0.9fr)_minmax(18rem,0.66fr)] lg:items-center lg:py-26"
+      class="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 md:py-22 lg:grid-cols-[minmax(0,0.92fr)_minmax(20rem,0.58fr)] lg:items-center lg:gap-14 lg:py-26"
     >
       <div class="max-w-3xl">
         <p
-          class="mb-5 inline-flex rounded-full border border-primary/20 bg-[var(--aw-color-surface)] px-4 py-2 text-sm font-semibold text-secondary dark:text-primary"
+          class="mb-5 inline-flex rounded-full bg-[var(--aw-color-surface)] px-4 py-2 text-sm font-semibold text-secondary ring-1 ring-primary/20 dark:text-primary"
         >
           Sinar Farma
         </p>
@@ -107,38 +109,26 @@ const faqs = [
         </div>
       </div>
 
-      <aside aria-label="Pratinjau aplikasi" class="mx-auto w-full max-w-[21rem] lg:mr-0">
-        <div class="rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-3">
-          <div class="rounded-xl border border-primary/10 bg-[var(--aw-color-surface)] p-4">
-            <div class="flex items-center justify-between gap-4 border-b border-primary/15 pb-4">
-              <div>
-                <p class="text-sm font-semibold text-secondary dark:text-primary">Pratinjau aplikasi</p>
-                <h2 class="mt-1 font-heading text-2xl font-bold tracking-[-0.02em] text-heading">Rak kebutuhan</h2>
-              </div>
-              <span
-                class="rounded-full border border-primary/15 bg-accent/15 px-3 py-1 text-sm font-semibold text-secondary dark:text-primary"
-              >
-                app
-              </span>
-            </div>
-
-            <div class="mt-4 space-y-2.5">
-              {
-                appRows.map((row) => (
-                  <article class="rounded-xl border border-primary/10 bg-page px-3.5 py-3 dark:bg-[var(--aw-color-surface-muted)]">
-                    <div class="flex items-start gap-3">
-                      <span class="mt-2 h-2 w-6 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                      <div class="min-w-0">
-                        <h3 class="font-semibold text-heading">{row.title}</h3>
-                        <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
-                          {row.note}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                ))
-              }
-            </div>
+      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="mx-auto w-full max-w-[23rem] lg:mr-0">
+        <div class="relative rounded-2xl bg-primary/8 p-3 ring-1 ring-primary/15 dark:bg-primary/10">
+          <div class="absolute -right-8 top-10 -z-10 h-32 w-32 rounded-full bg-accent/20 blur-3xl" aria-hidden="true">
+          </div>
+          <div class="absolute -bottom-6 -left-8 -z-10 h-36 w-36 rounded-full bg-primary/15 blur-3xl" aria-hidden="true">
+          </div>
+          <div class="overflow-hidden rounded-xl bg-[var(--aw-color-surface)] ring-1 ring-primary/10">
+            <Image
+              src="~/assets/images/app.png"
+              alt="Tampilan aplikasi Sinar Farma untuk mencari kebutuhan apotek harian."
+              width={442}
+              height={862}
+              widths={[320, 384, 442, 640]}
+              sizes="(min-width: 1024px) 23rem, min(92vw, 23rem)"
+              format="webp"
+              layout="responsive"
+              loading="eager"
+              fetchpriority="high"
+              class="block h-auto w-full"
+            />
           </div>
         </div>
       </aside>
