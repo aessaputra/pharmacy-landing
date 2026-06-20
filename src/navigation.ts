@@ -2,12 +2,12 @@ const mainLinks = [
   { text: 'Beranda', href: '/#beranda' },
   { text: 'Kategori', href: '/#kategori' },
   { text: 'Tentang', href: '/#tentang' },
-  { text: 'Kontak', href: '/#kontak' },
+  { text: 'Download', href: '/#download' },
 ];
 
 export const headerData = {
   links: mainLinks,
-  actions: [{ text: 'Informasi kontak', href: '/#kontak' }],
+  actions: [{ text: 'Download aplikasi', href: '/#download' }],
 };
 
 export const footerData = {

@@ -3,130 +3,175 @@ import Layout from '~/layouts/PageLayout.astro';
 import Button from '~/components/ui/Button.astro';
 
 const metadata = {
-  title: 'Sinar Farma — Profil Apotek',
+  title: 'Sinar Farma — Aplikasi Apotek',
   description:
-    'Profil singkat Sinar Farma untuk mengenal obat bebas, vitamin & suplemen, alat kesehatan, dan kebutuhan kesehatan harian.',
+    'Landing page aplikasi Sinar Farma untuk mengenal kategori kebutuhan apotek harian secara ringkas, jelas, dan aman.',
   ignoreTitleTemplate: true,
 };
 
-const categories = [
+const appRows = [
   {
     title: 'Obat bebas',
-    note: 'Kategori umum untuk kebutuhan apotek sehari-hari.',
+    note: 'Kategori umum untuk kebutuhan harian.',
   },
   {
     title: 'Vitamin & suplemen',
-    note: 'Kebutuhan penunjang rutinitas harian.',
+    note: 'Ringkasan penunjang rutinitas sehat.',
   },
   {
     title: 'Alat kesehatan',
-    note: 'Perlengkapan kesehatan dasar.',
+    note: 'Perlengkapan dasar untuk penggunaan rumah.',
   },
   {
     title: 'Kebutuhan harian',
-    note: 'Perawatan praktis untuk keseharian.',
+    note: 'Item perawatan umum yang mudah dipindai.',
   },
 ];
 
 const values = [
   {
     title: 'Terpercaya',
-    note: 'Informasi disusun hati-hati.',
+    note: 'Bahasa dibatasi pada informasi umum yang mudah dicek kembali.',
   },
   {
     title: 'Ramah',
-    note: 'Bahasa dibuat tenang dan mudah dipahami.',
+    note: 'Susunan pendek membantu pengunjung membaca tanpa istilah rumit.',
   },
   {
     title: 'Cepat',
-    note: 'Isi halaman singkat agar mudah dipindai.',
+    note: 'Kategori, ringkasan, dan arahan resmi disusun untuk layar ponsel.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Cari kebutuhan',
+    note: 'Mulai dari kelompok umum seperti obat bebas, vitamin, alat kesehatan, atau kebutuhan harian.',
+  },
+  {
+    title: 'Baca ringkasan',
+    note: 'Gunakan teks singkat untuk memahami ruang lingkup kategori sebelum mengikuti arahan berikutnya.',
+  },
+  {
+    title: 'Ikuti info resmi',
+    note: 'Saat kanal aplikasi diumumkan, bagian download akan menjadi titik awal yang aman.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Apakah tautan aplikasi sudah tersedia?',
+    answer: 'Belum. Halaman ini menyiapkan tempat informasi resmi tanpa menambahkan tautan yang belum diverifikasi.',
+  },
+  {
+    question: 'Apa yang bisa dilihat di halaman ini?',
+    answer: 'Pengunjung dapat membaca gambaran aplikasi, kategori umum, cara memakai informasi, dan status download.',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
   <section id="beranda" class="relative overflow-hidden scroll-mt-[72px]">
+    <div class="absolute inset-x-0 top-0 -z-10 h-56 bg-primary/8 dark:bg-primary/10" aria-hidden="true"></div>
     <div
-      class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-28"
+      class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:py-22 lg:grid-cols-[minmax(0,0.9fr)_minmax(18rem,0.66fr)] lg:items-center lg:py-26"
     >
       <div class="max-w-3xl">
         <p
-          class="mb-5 inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-secondary dark:text-primary"
+          class="mb-5 inline-flex rounded-full border border-primary/20 bg-[var(--aw-color-surface)] px-4 py-2 text-sm font-semibold text-secondary dark:text-primary"
         >
           Sinar Farma
         </p>
         <h1
           class="font-heading text-4xl font-bold leading-tight tracking-[-0.025em] text-heading text-balance sm:text-5xl lg:text-6xl"
         >
-          Profil apotek untuk kebutuhan kesehatan harian.
+          Aplikasi apotek untuk kebutuhan harian.
         </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-slate-300">
-          Kenali Sinar Farma melalui ringkasan kategori umum yang mudah dipindai. Detail kontak resmi akan ditampilkan
-          melalui kanal resmi saat tersedia.
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+          Sinar Farma membantu pengunjung mengenal kategori apotek harian lewat tampilan ponsel yang ringkas. Halaman
+          ini menjaga informasi tetap umum sampai detail resmi tersedia.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button variant="primary" text="Lihat informasi kontak" href="#kontak" />
-          <Button variant="secondary" text="Lihat rak kebutuhan" href="#kategori" />
+          <Button
+            variant="primary"
+            text="Download aplikasi"
+            href="#download"
+            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          />
+          <Button
+            variant="secondary"
+            text="Lihat kategori"
+            href="#kategori"
+            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          />
         </div>
       </div>
 
-      <div
-        id="kategori"
-        class="scroll-mt-[72px] rounded-2xl bg-[var(--aw-color-surface-muted)] p-3 dark:bg-[var(--aw-color-surface-muted)]"
-      >
-        <div class="rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/15 md:p-6">
-          <div class="flex flex-col gap-3 border-b border-primary/15 pb-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 class="font-heading text-2xl font-bold tracking-[-0.02em] text-heading text-balance md:text-3xl">
-                Rak kebutuhan Sinar Farma.
-              </h2>
-              <p class="mt-2 max-w-xl text-sm leading-6 text-muted dark:text-slate-300">
-                Satu ringkasan untuk mengenal kelompok kebutuhan umum, tanpa klaim stok atau transaksi.
-              </p>
+      <aside aria-label="Pratinjau aplikasi" class="mx-auto w-full max-w-[21rem] lg:mr-0">
+        <div class="rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-3">
+          <div class="rounded-xl border border-primary/10 bg-[var(--aw-color-surface)] p-4">
+            <div class="flex items-center justify-between gap-4 border-b border-primary/15 pb-4">
+              <div>
+                <p class="text-sm font-semibold text-secondary dark:text-primary">Pratinjau aplikasi</p>
+                <h2 class="mt-1 font-heading text-2xl font-bold tracking-[-0.02em] text-heading">Rak kebutuhan</h2>
+              </div>
+              <span
+                class="rounded-full border border-primary/15 bg-accent/15 px-3 py-1 text-sm font-semibold text-secondary dark:text-primary"
+              >
+                app
+              </span>
             </div>
-            <span
-              class="w-fit rounded-full bg-accent/15 px-3 py-1 text-sm font-semibold text-secondary dark:text-primary"
-            >
-              ringkas
-            </span>
-          </div>
 
-          <div class="mt-5 space-y-2">
-            {
-              categories.map((category) => (
-                <article class="grid gap-3 rounded-lg bg-page px-4 py-3 ring-1 ring-primary/10 sm:grid-cols-[minmax(9rem,0.8fr)_1.2fr] sm:items-center dark:bg-[var(--aw-color-surface-muted)]">
-                  <div class="flex items-center gap-3">
-                    <span class="h-2.5 w-8 rounded-full bg-primary" aria-hidden="true" />
-                    <h3 class="font-semibold text-heading">{category.title}</h3>
-                  </div>
-                  <p class="text-sm leading-6 text-muted dark:text-slate-300">{category.note}</p>
-                </article>
-              ))
-            }
+            <div class="mt-4 space-y-2.5">
+              {
+                appRows.map((row) => (
+                  <article class="rounded-xl border border-primary/10 bg-page px-3.5 py-3 dark:bg-[var(--aw-color-surface-muted)]">
+                    <div class="flex items-start gap-3">
+                      <span class="mt-2 h-2 w-6 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                      <div class="min-w-0">
+                        <h3 class="font-semibold text-heading">{row.title}</h3>
+                        <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
+                          {row.note}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <section aria-label="Nilai pengalaman" class="border-y border-primary/15 bg-[var(--aw-color-surface-muted)]">
-    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10">
-      <div
-        class="flex flex-col gap-5 rounded-2xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10 md:flex-row md:items-center md:justify-between md:p-6"
-      >
-        <p class="max-w-sm text-sm font-semibold leading-6 text-secondary dark:text-primary">
-          Cara halaman ini membantu pengunjung: jelas, ramah, dan cepat dipindai.
-        </p>
-        <div class="grid gap-4 md:grid-cols-3 md:gap-6">
+  <section id="kategori" class="scroll-mt-[72px] border-y border-primary/15 bg-[var(--aw-color-surface-muted)]">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+        <div>
+          <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
+            Kategori utama.
+          </h2>
+          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+            Snapshot ini menjaga pilihan tetap generik. Tujuannya membantu pengunjung mengenali ruang lingkup aplikasi
+            tanpa menambah detail yang belum diumumkan.
+          </p>
+        </div>
+
+        <div class="grid gap-2.5 sm:grid-cols-2">
           {
-            values.map((value) => (
-              <div class="flex gap-3">
-                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <div>
-                  <h3 class="font-semibold text-heading">{value.title}</h3>
-                  <p class="mt-1 text-sm leading-6 text-muted dark:text-slate-300">{value.note}</p>
+            appRows.map((category) => (
+              <article class="rounded-xl border border-primary/10 bg-[var(--aw-color-surface)] px-4 py-3.5">
+                <div class="flex items-start gap-3">
+                  <span class="mt-2 h-2 w-6 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                  <div class="min-w-0">
+                    <h3 class="font-semibold text-heading">{category.title}</h3>
+                    <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
+                      {category.note}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </article>
             ))
           }
         </div>
@@ -134,37 +179,145 @@ const values = [
     </div>
   </section>
 
+  <section aria-labelledby="nilai-heading" class="bg-[var(--aw-color-surface)]">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-22">
+      <div class="max-w-2xl">
+        <h2
+          id="nilai-heading"
+          class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
+        >
+          Dibuat untuk membaca cepat.
+        </h2>
+        <p class="mt-4 text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+          Nilai halaman dijaga sederhana: jelas, dekat dengan kebutuhan umum, dan tidak melampaui informasi resmi.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-4 lg:grid-cols-[1fr_0.88fr_1.12fr]">
+        {
+          values.map((value) => (
+            <article class="rounded-xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-5">
+              <h3 class="font-heading text-xl font-bold tracking-[-0.015em] text-heading">{value.title}</h3>
+              <p class="mt-2 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">{value.note}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="cara-kerja" class="scroll-mt-[72px] bg-[var(--aw-color-surface-muted)]">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
+      <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div>
+          <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
+            Cara memakai informasinya.
+          </h2>
+          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+            Alur ini hanya menjelaskan cara membaca halaman dan mengikuti pembaruan resmi aplikasi.
+          </p>
+        </div>
+
+        <ol class="space-y-3">
+          {
+            steps.map((step, index) => (
+              <li class="rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10">
+                <div class="flex gap-4">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-secondary dark:text-primary">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 class="font-semibold text-heading">{step.title}</h3>
+                    <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
+                      {step.note}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <section id="tentang" class="scroll-mt-[72px]">
-    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-[0.8fr_1.2fr] md:py-20">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.82fr_1.18fr] md:py-20">
       <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
         Tentang Sinar Farma.
       </h2>
-      <div class="max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-slate-300">
+      <div class="max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
         <p>
-          Sinar Farma adalah profil apotek untuk mengenalkan kebutuhan kesehatan umum secara singkat. Halaman ini
-          membantu pengunjung memahami arah informasi sebelum menggunakan kanal resmi.
+          Sinar Farma adalah halaman pengantar aplikasi apotek untuk kebutuhan umum. Konten dibuat singkat agar
+          pengunjung dapat memahami arah aplikasi sebelum mengikuti informasi resmi berikutnya.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="kontak" class="scroll-mt-[72px] px-4 pb-16 sm:px-6 md:pb-24">
+  <section aria-labelledby="aman-heading" class="bg-[var(--aw-color-surface)]">
+    <div class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 md:pb-20">
+      <div class="rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-6 md:p-8">
+        <h2
+          id="aman-heading"
+          class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
+        >
+          Batas informasi dijaga.
+        </h2>
+        <p class="mt-4 max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+          Halaman ini hanya memakai kategori umum dan status yang aman ditampilkan. Detail resmi dapat ditambahkan
+          setelah sumber Sinar Farma tersedia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-heading" class="bg-[var(--aw-color-surface-muted)]">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+        <div>
+          <h2
+            id="faq-heading"
+            class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
+          >
+            Pertanyaan singkat.
+          </h2>
+          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
+            Jawaban tetap ringkas agar tidak menambah janji yang belum terverifikasi.
+          </p>
+        </div>
+        <div class="space-y-3">
+          {
+            faqs.map((faq) => (
+              <article class="rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10">
+                <h3 class="font-semibold text-heading">{faq.question}</h3>
+                <p class="mt-2 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">{faq.answer}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="scroll-mt-[72px] px-4 py-16 sm:px-6 md:py-24">
     <div class="mx-auto max-w-7xl rounded-2xl bg-primary px-6 py-10 text-white md:px-10 md:py-12">
       <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
         <div class="max-w-2xl">
           <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-balance md:text-4xl">
-            Informasi kontak resmi akan ditampilkan di sini.
+            Download aplikasi saat rilis resmi tersedia.
           </h2>
           <p class="mt-4 text-lg leading-8 text-white/90 text-pretty">
-            Gunakan hanya kanal resmi Sinar Farma saat tersedia. Halaman ini tidak menampilkan nomor, alamat, atau
-            tautan yang belum terverifikasi.
+            Bagian ini disiapkan sebagai titik status. Tautan resmi akan ditampilkan setelah informasi Sinar Farma
+            tersedia.
           </p>
+          <p class="mt-3 text-sm leading-6 text-white/80">Status: menunggu pengumuman resmi Sinar Farma.</p>
         </div>
         <Button
           variant="secondary"
-          text="Kembali ke rak kebutuhan"
-          href="#kategori"
-          class="border-white bg-white text-secondary hover:border-white hover:bg-white/90 dark:border-white dark:bg-white dark:text-secondary"
+          text="Kembali ke atas"
+          href="#beranda"
+          class="border-white bg-white text-secondary hover:border-white hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white dark:border-white dark:bg-white dark:text-secondary"
         />
       </div>
     </div>
