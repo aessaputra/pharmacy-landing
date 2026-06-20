@@ -1,6 +1,6 @@
 const mainLinks = [
   { text: 'Beranda', href: '/#beranda' },
-  { text: 'Kategori', href: '/#kategori' },
+  { text: 'Fitur', href: '/#fitur' },
   { text: 'Tentang', href: '/#tentang' },
   { text: 'Download', href: '/#download' },
 ];
