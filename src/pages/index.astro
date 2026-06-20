@@ -6,28 +6,9 @@ import Button from '~/components/ui/Button.astro';
 const metadata = {
   title: 'Sinar Farma — Aplikasi Apotek',
   description:
-    'Landing page aplikasi Sinar Farma untuk mengenal kategori kebutuhan apotek harian secara ringkas, jelas, dan aman.',
+    'Landing page aplikasi Sinar Farma untuk mengenal kebutuhan apotek harian secara ringkas, jelas, dan aman.',
   ignoreTitleTemplate: true,
 };
-
-const appRows = [
-  {
-    title: 'Obat bebas',
-    note: 'Kategori umum untuk kebutuhan harian.',
-  },
-  {
-    title: 'Vitamin & suplemen',
-    note: 'Ringkasan penunjang rutinitas sehat.',
-  },
-  {
-    title: 'Alat kesehatan',
-    note: 'Perlengkapan dasar untuk penggunaan rumah.',
-  },
-  {
-    title: 'Kebutuhan harian',
-    note: 'Item perawatan umum yang mudah dipindai.',
-  },
-];
 
 const values = [
   {
@@ -40,18 +21,18 @@ const values = [
   },
   {
     title: 'Cepat',
-    note: 'Kategori, ringkasan, dan arahan resmi disusun untuk layar ponsel.',
+    note: 'Ringkasan dan arahan resmi disusun untuk layar ponsel.',
   },
 ];
 
 const steps = [
   {
     title: 'Cari kebutuhan',
-    note: 'Mulai dari kelompok umum seperti obat bebas, vitamin, alat kesehatan, atau kebutuhan harian.',
+    note: 'Mulai dari ringkasan umum tentang kebutuhan apotek harian yang tersedia di halaman ini.',
   },
   {
     title: 'Baca ringkasan',
-    note: 'Gunakan teks singkat untuk memahami ruang lingkup kategori sebelum mengikuti arahan berikutnya.',
+    note: 'Gunakan teks singkat untuk memahami fungsi dasar aplikasi sebelum mengikuti arahan berikutnya.',
   },
   {
     title: 'Ikuti info resmi',
@@ -66,7 +47,7 @@ const faqs = [
   },
   {
     question: 'Apa yang bisa dilihat di halaman ini?',
-    answer: 'Pengunjung dapat membaca gambaran aplikasi, kategori umum, cara memakai informasi, dan status download.',
+    answer: 'Pengunjung dapat membaca gambaran aplikasi, cara memakai informasi, dan status download.',
   },
 ];
 ---
@@ -76,7 +57,7 @@ const faqs = [
     <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-primary/8 dark:bg-primary/10" aria-hidden="true"></div>
     <div class="absolute left-1/2 top-18 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/14 blur-3xl" aria-hidden="true"></div>
     <div
-      class="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 md:py-22 lg:grid-cols-[minmax(0,0.92fr)_minmax(20rem,0.58fr)] lg:items-center lg:gap-14 lg:py-26"
+      class="mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-8 sm:px-6 md:pb-16 md:pt-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(18rem,0.52fr)] lg:items-start lg:gap-12 lg:pb-20 lg:pt-14"
     >
       <div class="max-w-3xl">
         <p
@@ -90,7 +71,7 @@ const faqs = [
           Aplikasi apotek untuk kebutuhan harian.
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Sinar Farma membantu pengunjung mengenal kategori apotek harian lewat tampilan ponsel yang ringkas. Halaman
+          Sinar Farma membantu pengunjung memahami kebutuhan apotek harian lewat tampilan ponsel yang ringkas. Halaman
           ini menjaga informasi tetap umum sampai detail resmi tersedia.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -102,15 +83,15 @@ const faqs = [
           />
           <Button
             variant="secondary"
-            text="Lihat kategori"
-            href="#kategori"
+            text="Fitur"
+            href="#fitur"
             class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           />
         </div>
       </div>
 
-      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="mx-auto w-full max-w-[23rem] lg:mr-0">
-        <div class="relative rounded-2xl bg-primary/8 p-3 ring-1 ring-primary/15 dark:bg-primary/10">
+      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="mx-auto w-full max-w-[18rem] lg:mr-0 lg:max-w-[19rem]">
+        <div class="relative rounded-2xl bg-primary/8 p-2.5 ring-1 ring-primary/15 dark:bg-primary/10">
           <div class="absolute -right-8 top-10 -z-10 h-32 w-32 rounded-full bg-accent/20 blur-3xl" aria-hidden="true">
           </div>
           <div class="absolute -bottom-6 -left-8 -z-10 h-36 w-36 rounded-full bg-primary/15 blur-3xl" aria-hidden="true">
@@ -121,51 +102,17 @@ const faqs = [
               alt="Tampilan aplikasi Sinar Farma untuk mencari kebutuhan apotek harian."
               width={442}
               height={862}
-              widths={[320, 384, 442, 640]}
-              sizes="(min-width: 1024px) 23rem, min(92vw, 23rem)"
+              widths={[280, 320, 384, 442]}
+              sizes="(min-width: 1024px) 19rem, min(88vw, 18rem)"
               format="webp"
               layout="responsive"
               loading="eager"
               fetchpriority="high"
-              class="block h-auto w-full"
+              class="block h-auto max-h-[34rem] w-full object-contain sm:max-h-[38rem] lg:max-h-[40rem]"
             />
           </div>
         </div>
       </aside>
-    </div>
-  </section>
-
-  <section id="kategori" class="scroll-mt-[72px] border-y border-primary/15 bg-[var(--aw-color-surface-muted)]">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
-      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-        <div>
-          <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
-            Kategori utama.
-          </h2>
-          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-            Snapshot ini menjaga pilihan tetap generik. Tujuannya membantu pengunjung mengenali ruang lingkup aplikasi
-            tanpa menambah detail yang belum diumumkan.
-          </p>
-        </div>
-
-        <div class="grid gap-2.5 sm:grid-cols-2">
-          {
-            appRows.map((category) => (
-              <article class="rounded-xl border border-primary/10 bg-[var(--aw-color-surface)] px-4 py-3.5">
-                <div class="flex items-start gap-3">
-                  <span class="mt-2 h-2 w-6 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <div class="min-w-0">
-                    <h3 class="font-semibold text-heading">{category.title}</h3>
-                    <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
-                      {category.note}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            ))
-          }
-        </div>
-      </div>
     </div>
   </section>
 
@@ -196,15 +143,15 @@ const faqs = [
     </div>
   </section>
 
-  <section id="cara-kerja" class="scroll-mt-[72px] bg-[var(--aw-color-surface-muted)]">
+  <section id="fitur" class="scroll-mt-[72px] bg-[var(--aw-color-surface-muted)]">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
       <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <div>
           <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
-            Cara memakai informasinya.
+            Fitur ringkas.
           </h2>
           <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-            Alur ini hanya menjelaskan cara membaca halaman dan mengikuti pembaruan resmi aplikasi.
+            Bagian ini menampilkan fitur utama yang membantu pengunjung memahami aplikasi Sinar Farma.
           </p>
         </div>
 
@@ -255,7 +202,7 @@ const faqs = [
           Batas informasi dijaga.
         </h2>
         <p class="mt-4 max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Halaman ini hanya memakai kategori umum dan status yang aman ditampilkan. Detail resmi dapat ditambahkan
+          Halaman ini hanya memakai informasi umum dan status yang aman ditampilkan. Detail resmi dapat ditambahkan
           setelah sumber Sinar Farma tersedia.
         </p>
       </div>
