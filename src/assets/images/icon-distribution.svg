@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-dasharray="100" stroke-dashoffset="100">
+    <animate attributeName="stroke-dashoffset" values="100;0;0;100" keyTimes="0;0.3;0.8;1" dur="4s" repeatCount="indefinite" />
+  </path>
+  <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke-dasharray="30" stroke-dashoffset="30">
+    <animate attributeName="stroke-dashoffset" values="30;30;0;0;30" keyTimes="0;0.15;0.4;0.8;1" dur="4s" repeatCount="indefinite" />
+  </polyline>
+  <line x1="12" y1="22.08" x2="12" y2="12" stroke-dasharray="12" stroke-dashoffset="12">
+    <animate attributeName="stroke-dashoffset" values="12;12;0;0;12" keyTimes="0;0.2;0.4;0.8;1" dur="4s" repeatCount="indefinite" />
+  </line>
+  <g transform="translate(10, 8) scale(0.6)">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#fff" stroke-width="0" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3;0.35;0.8;1" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-dasharray="75" stroke-dashoffset="75">
+      <animate attributeName="stroke-dashoffset" values="75;75;0;0;75" keyTimes="0;0.3;0.5;0.8;1" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M9 12l2 2 4-4" stroke-dasharray="15" stroke-dashoffset="15">
+      <animate attributeName="stroke-dashoffset" values="15;15;0;0;15" keyTimes="0;0.45;0.6;0.8;1" dur="4s" repeatCount="indefinite" />
+    </path>
+  </g>
+</svg>

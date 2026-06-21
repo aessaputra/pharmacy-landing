@@ -1,0 +1,83 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#0284c7">
+  <defs>
+    <radialGradient id="secureGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Glowing Background -->
+  <circle cx="50" cy="50" r="40" fill="url(#secureGlow)" stroke="none" class="glow-pulse" />
+
+  <!-- Shield Base -->
+  <path d="M 50 15 L 80 25 L 80 50 C 80 75 50 90 50 90 C 50 90 20 75 20 50 L 20 25 Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="shield" opacity="0.8"/>
+
+  <!-- Padlock Body -->
+  <rect x="38" y="45" width="24" height="20" rx="4" fill="#0284c7" stroke="none" />
+  
+  <!-- Padlock Shackle (Animates up and down) -->
+  <path d="M 42 45 V 35 A 8 8 0 0 1 58 35 V 45" stroke-width="4" stroke-linecap="round" class="shackle" />
+
+  <!-- Lightning Bolt / Check -->
+  <path d="M 52 48 L 47 55 L 54 55 L 49 62" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spark" />
+
+  <!-- Orbiting dots -->
+  <circle cx="50" cy="15" r="3" fill="#3b82f6" stroke="none" class="dot1" />
+  <circle cx="80" cy="50" r="3" fill="#3b82f6" stroke="none" class="dot2" />
+  <circle cx="20" cy="50" r="3" fill="#3b82f6" stroke="none" class="dot3" />
+
+  <style>
+    .shackle {
+      transform-origin: 50% 45px;
+      animation: lockSnap 3s infinite ease-in-out;
+    }
+    .spark {
+      stroke-dasharray: 30;
+      stroke-dashoffset: 30;
+      animation: drawSpark 3s infinite ease-out;
+    }
+    .shield {
+      stroke-dasharray: 250;
+      stroke-dashoffset: 250;
+      animation: drawShield 4s infinite ease-in-out forwards;
+    }
+    .glow-pulse {
+      animation: pulseGlow 3s infinite alternate ease-in-out;
+    }
+    .dot1 { animation: float1 3s infinite ease-in-out alternate; }
+    .dot2 { animation: float2 2.5s infinite ease-in-out alternate; }
+    .dot3 { animation: float3 3.5s infinite ease-in-out alternate; }
+
+    @keyframes lockSnap {
+      0%, 20% { transform: translateY(-6px); }
+      30%, 80% { transform: translateY(0); }
+      90%, 100% { transform: translateY(-6px); }
+    }
+    @keyframes drawSpark {
+      0%, 30% { stroke-dashoffset: 30; opacity: 0; }
+      40% { opacity: 1; }
+      50%, 80% { stroke-dashoffset: 0; opacity: 1; }
+      90%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes drawShield {
+      0% { stroke-dashoffset: 250; }
+      30%, 100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0% { transform: scale(0.9); opacity: 0.5; }
+      100% { transform: scale(1.1); opacity: 1; }
+    }
+    @keyframes float1 {
+      0% { transform: translateY(0); opacity: 0.5; }
+      100% { transform: translateY(-10px); opacity: 1; }
+    }
+    @keyframes float2 {
+      0% { transform: translateX(0); opacity: 0.5; }
+      100% { transform: translateX(10px); opacity: 1; }
+    }
+    @keyframes float3 {
+      0% { transform: translateX(0); opacity: 0.5; }
+      100% { transform: translateX(-10px); opacity: 1; }
+    }
+  </style>
+</svg>

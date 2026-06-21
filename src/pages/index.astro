@@ -2,11 +2,21 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+
+import featureRide from '~/assets/images/feature-ride.svg';
+import featureShield from '~/assets/images/feature-shield.svg';
+import featurePills from '~/assets/images/feature-pills.svg';
+import featureSecure from '~/assets/images/feature-secure.svg';
+
+import iconDistribution from '~/assets/images/icon-distribution.svg';
+import iconPharmacist from '~/assets/images/icon-pharmacist.svg';
+import iconColdchain from '~/assets/images/icon-coldchain.svg';
 
 const metadata = {
-  title: 'Sinar Farma — Akses Apotek',
+  title: 'Sinar Farma | Belanja Obat Harian',
   description:
-    'Sinar Farma mempermudah pencarian obat dan layanan apotek langsung dari ponsel Anda. Dapatkan akses awal sekarang.',
+    'Aplikasi e-commerce farmasi terpercaya untuk kebutuhan kesehatan keluarga. Pesan obat bebas, vitamin, hingga suplemen harian.',
   ignoreTitleTemplate: true,
 };
 
@@ -42,12 +52,14 @@ const steps = [
 
 const faqs = [
   {
-    question: 'Kapan aplikasi Sinar Farma bisa diunduh?',
-    answer: 'Saat ini kami masih dalam tahap persiapan akhir. Daftarkan diri Anda untuk mendapat pemberitahuan pertama saat aplikasi siap diunduh.',
+    question: 'Di mana saya bisa mengunduh SF App?',
+    answer:
+      'Aplikasi Android (APK) kami sudah dapat diunduh secara resmi melalui tautan Google Drive yang tersedia di halaman ini.',
   },
   {
-    question: 'Apakah Sinar Farma berbayar?',
-    answer: 'Tidak, aplikasi ini sepenuhnya gratis untuk membantu Anda menemukan apotek dan ketersediaan obat secara instan.',
+    question: 'Apakah pengiriman bisa dilakukan di hari yang sama?',
+    answer:
+      'Ya, kami bekerja sama dengan layanan kurir instan untuk memastikan obat Anda sampai dengan cepat dan aman.',
   },
 ];
 ---
@@ -55,9 +67,21 @@ const faqs = [
 <Layout metadata={metadata}>
   <section id="beranda" class="relative overflow-x-clip scroll-mt-[72px]">
     <!-- Aurora UI Mesh Glows -->
-    <div class="pointer-events-none absolute -left-20 top-0 -z-10 h-[24rem] w-[24rem] rounded-full bg-primary/15 blur-[100px] dark:bg-primary/20" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute left-1/4 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-[120px] dark:bg-accent/15" aria-hidden="true"></div>
-    <div class="pointer-events-none absolute right-0 top-10 -z-10 h-[20rem] w-[20rem] rounded-full bg-primary/10 blur-[80px] dark:bg-primary/10" aria-hidden="true"></div>
+    <div
+      class="pointer-events-none absolute -left-20 top-0 -z-10 h-[24rem] w-[24rem] rounded-full bg-primary/15 blur-[100px] dark:bg-primary/20"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute left-1/4 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-[120px] dark:bg-accent/15"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute right-0 top-10 -z-10 h-[20rem] w-[20rem] rounded-full bg-primary/10 blur-[80px] dark:bg-primary/10"
+      aria-hidden="true"
+    >
+    </div>
 
     <div
       class="mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-8 sm:px-6 md:pb-16 md:pt-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(18rem,0.52fr)] lg:items-start lg:gap-12 lg:pb-20 lg:pt-14"
@@ -66,30 +90,60 @@ const faqs = [
         <h1
           class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade font-heading text-5xl font-extrabold leading-tight tracking-tighter text-heading text-balance sm:text-6xl lg:text-7xl"
         >
-          Akses Apotek Harian dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Satu Ketukan.</span>
+          SF App
         </h1>
-        <p class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]" style="animation-delay: 100ms;">
-          Sinar Farma mempermudah pencarian obat dan layanan apotek langsung dari ponsel Anda. Bersiaplah untuk peluncuran resmi kami.
+        <h2
+          class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-4 font-heading text-3xl font-bold tracking-tight text-heading text-balance sm:text-4xl lg:text-5xl"
+          style="animation-delay: 50ms;"
+        >
+          Belanja Obat Harian dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+            >satu ketukan.</span
+          >
+        </h2>
+        <p
+          class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]"
+          style="animation-delay: 100ms;"
+        >
+          Pesan obat bebas, vitamin, dan suplemen harian tanpa harus keluar rumah. Belanja praktis dari ponsel, dan
+          biarkan kami mengantarkannya ke pintu Anda.
         </p>
-        <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-8 flex flex-col gap-3 sm:flex-row" style="animation-delay: 200ms;">
-          <Button
-            variant="primary"
-            text="Dapatkan Akses Awal"
-            href="#download"
-            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-all duration-500 ease-out hover:-translate-y-1 active:scale-95 hover:shadow-lg hover:shadow-primary/30"
-          />
+        <div
+          class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-8 flex flex-col gap-3 sm:flex-row"
+          style="animation-delay: 200ms;"
+        >
+          <a
+            href="https://drive.google.com/drive/folders/1_RH4ZZTydq_RQmvIl7ywUh0X1rWYDnJt?usp=drive_link"
+            target="_blank"
+            class="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-accent px-8 py-3.5 font-semibold text-white dark:text-slate-900 shadow-xl shadow-primary/30 transition-all duration-500 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:scale-95 border border-white/10 dark:border-black/10"
+          >
+            <span
+              class="absolute inset-0 -z-10 rounded-full bg-white/0 transition-colors duration-500 group-hover:bg-white/20"
+            ></span>
+            <span class="relative z-10">Unduh Sekarang</span>
+            <Icon
+              name="tabler:download"
+              class="relative z-10 h-5 w-5 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-110"
+            />
+          </a>
           <Button
             variant="secondary"
-            text="Pelajari Fitur"
+            text="Jelajahi Fitur"
             href="#fitur"
             class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-all duration-500 ease-out hover:bg-primary/5 active:scale-95"
           />
         </div>
       </div>
 
-      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mx-auto w-full max-w-[18rem] lg:mr-0 lg:max-w-[19rem]" style="animation-delay: 300ms;">
+      <aside
+        aria-label="Pratinjau aplikasi Sinar Farma"
+        class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mx-auto w-full max-w-[18rem] lg:mr-0 lg:max-w-[19rem]"
+        style="animation-delay: 300ms;"
+      >
         <div class="relative">
-          <div class="absolute -right-12 top-4 -z-10 h-40 w-40 rounded-full bg-primary/20 blur-[64px] transition-all duration-1000 ease-in-out hover:scale-110" aria-hidden="true">
+          <div
+            class="absolute -right-12 top-4 -z-10 h-40 w-40 rounded-full bg-primary/20 blur-[64px] transition-all duration-1000 ease-in-out hover:scale-110"
+            aria-hidden="true"
+          >
           </div>
           <div
             class="absolute -bottom-8 -left-12 -z-10 h-48 w-48 rounded-full bg-accent/20 blur-[64px] transition-all duration-1000 ease-in-out hover:scale-110"
@@ -117,136 +171,282 @@ const faqs = [
   </section>
 
   <section id="fitur" class="relative scroll-mt-[72px]">
-    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 md:pt-24 md:pb-12">
       <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mb-12 max-w-3xl">
         <h2 class="font-heading text-4xl font-extrabold tracking-tight text-heading text-balance md:text-5xl">
-          Keunggulan Sinar Farma
+          Apotek Lengkap di Genggaman
         </h2>
         <p class="mt-4 text-xl leading-8 text-muted dark:text-slate-400">
-          Dirancang untuk memberikan efisiensi maksimal dalam mencari kebutuhan obat dan apotek.
+          Beli kebutuhan kesehatan harian kini tak perlu keluar rumah. Semua serba praktis langsung dari layar ponsel
+          Anda.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[240px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         <!-- Box 1: Large -->
-        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 lg:col-span-2 md:row-span-2 rounded-[2.5rem] border border-white/60 bg-white/60 p-8 sm:p-12 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/15 dark:border-slate-700/50 dark:bg-slate-800/60 dark:ring-white/10 overflow-hidden relative flex flex-col justify-end">
-          <div class="absolute -right-10 -bottom-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden="true"></div>
-          <h3 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-heading mb-4 relative z-10">Pencarian Secepat Kilat</h3>
-          <p class="text-lg leading-relaxed text-muted dark:text-slate-400 max-w-md relative z-10">
-            Temukan rute dan detail apotek terdekat dalam hitungan detik saat keadaan mendesak. Antarmuka kami bebas distraksi, khusus untuk membaca cepat di ponsel.
-          </p>
+        <article
+          class="intersect-once group motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 rounded-[2rem] border border-black/5 bg-white/60 p-8 sm:p-10 lg:p-12 shadow-xl shadow-black/5 backdrop-blur-2xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-slate-800/50 dark:shadow-black/40 dark:ring-white/5 overflow-hidden relative min-h-[340px] flex flex-col justify-center"
+        >
+          <div class="absolute -right-10 -bottom-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden="true">
+          </div>
+
+          <div class="relative z-10 md:max-w-[55%]">
+            <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-heading mb-4">
+              Pesan, Bayar, Langsung Antar
+            </h3>
+            <p class="text-base sm:text-lg leading-relaxed text-muted dark:text-slate-300">
+              Pilih ribuan produk kesehatan dengan mudah. Masukkan ke keranjang, <em>checkout</em> aman, dan tiba di depan
+              pintu dalam hitungan jam.
+            </p>
+          </div>
+
+          <!-- SVG Asset 1 -->
+          <div
+            class="absolute bottom-0 right-0 w-[90%] sm:w-[60%] md:w-[45%] lg:w-1/2 h-full pointer-events-none transition-transform duration-700 group-hover:scale-105 origin-bottom-right"
+          >
+            <img
+              src={featureRide.src}
+              alt="Ride Delivery"
+              class="w-full h-full object-contain object-right-bottom opacity-10 sm:opacity-20 md:opacity-100 p-6 sm:p-8 lg:p-10"
+            />
+          </div>
         </article>
 
         <!-- Box 2: Small -->
-        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 lg:col-span-2 rounded-[2.5rem] border border-white/60 bg-primary/5 p-8 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-primary/15 dark:border-primary/20 dark:bg-primary/10 dark:ring-white/10 flex flex-col justify-end" style="animation-delay: 100ms;">
-          <h3 class="font-heading text-2xl font-bold tracking-tight text-primary dark:text-primary mb-2">Informasi Terverifikasi</h3>
-          <p class="text-base text-muted dark:text-slate-400">
-            Sumber data dicek ketat untuk memastikan panduan akurat.
-          </p>
+        <article
+          class="intersect-once group motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 rounded-[2rem] border border-black/5 bg-primary/5 p-8 sm:p-10 shadow-xl shadow-black/5 backdrop-blur-2xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-primary/20 dark:bg-primary/10 dark:shadow-black/40 dark:ring-primary/10 overflow-hidden relative flex flex-col items-center justify-center min-h-[300px]"
+          style="animation-delay: 100ms;"
+        >
+          <!-- Mobile Background Asset -->
+          <div
+            class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 flex items-center justify-center"
+          >
+            <img src={featureShield.src} alt="" class="w-full h-full object-contain" />
+          </div>
+
+          <!-- SVG Asset 2 (Desktop) -->
+          <div
+            class="hidden sm:block w-24 h-24 sm:w-32 sm:h-32 opacity-90 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700 relative z-10 origin-center mb-6"
+          >
+            <img src={featureShield.src} alt="Shield Icon" class="w-full h-full object-contain object-center" />
+          </div>
+
+          <!-- Text -->
+          <div class="relative z-10 text-center w-full mt-4 sm:mt-0">
+            <h3 class="font-heading text-xl sm:text-2xl font-bold tracking-tight text-primary dark:text-primary mb-3">
+              Jaminan 100% Asli
+            </h3>
+            <p class="text-sm sm:text-base leading-relaxed text-muted dark:text-slate-300">
+              Setiap produk diperoleh langsung dari distributor dan apotek resmi demi keamanan ekstra.
+            </p>
+          </div>
         </article>
 
         <!-- Box 3: Small -->
-        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 lg:col-span-2 rounded-[2.5rem] border border-white/60 bg-white/60 p-8 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-primary/15 dark:border-slate-700/50 dark:bg-slate-800/60 dark:ring-white/10 flex flex-col justify-end" style="animation-delay: 200ms;">
-          <h3 class="font-heading text-2xl font-bold tracking-tight text-heading mb-2">Akses Awal</h3>
-          <p class="text-base text-muted dark:text-slate-400">
-            Jadilah yang pertama mencoba dengan mendaftar di halaman ini.
-          </p>
+        <article
+          class="intersect-once group motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 rounded-[2rem] border border-black/5 bg-white/60 p-8 sm:p-10 shadow-xl shadow-black/5 backdrop-blur-2xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-slate-800/50 dark:shadow-black/40 dark:ring-white/5 overflow-hidden relative flex flex-col items-center justify-center min-h-[300px]"
+          style="animation-delay: 200ms;"
+        >
+          <!-- Mobile Background Asset -->
+          <div
+            class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-3 flex items-center justify-center"
+          >
+            <img src={featurePills.src} alt="" class="w-full h-full object-contain" />
+          </div>
+
+          <!-- SVG Asset 3 (Desktop) -->
+          <div
+            class="hidden sm:block w-24 h-24 sm:w-32 sm:h-32 opacity-80 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-700 relative z-10 origin-center mb-6"
+          >
+            <img src={featurePills.src} alt="Pills Icon" class="w-full h-full object-contain object-center" />
+          </div>
+
+          <!-- Text -->
+          <div class="relative z-10 text-center w-full mt-4 sm:mt-0">
+            <h3 class="font-heading text-xl sm:text-2xl font-bold tracking-tight text-heading mb-3">
+              Katalog Terlengkap
+            </h3>
+            <p class="text-sm sm:text-base leading-relaxed text-muted dark:text-slate-300">
+              Obat bebas, vitamin harian, hingga perawatan tubuh—tersedia di satu etalase pintar.
+            </p>
+          </div>
         </article>
 
         <!-- Box 4: Wide -->
-        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 lg:col-span-4 rounded-[2.5rem] border border-white/60 bg-gradient-to-r from-primary/5 to-accent/5 p-8 sm:p-10 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.01] hover:shadow-primary/15 dark:border-slate-700/50 dark:from-primary/10 dark:to-accent/10 dark:ring-white/10 flex flex-col sm:flex-row items-center justify-between gap-8" style="animation-delay: 300ms;">
-          <div>
-            <h3 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-heading mb-2">Pantau Email Anda</h3>
-            <p class="text-lg text-muted dark:text-slate-400">
-              Kami akan mengirimkan notifikasi dan tautan unduhan aman saat rilis resmi tiba.
+        <article
+          class="intersect-once group motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 rounded-[2rem] border border-black/5 bg-gradient-to-r from-primary/5 to-accent/5 p-8 sm:p-10 lg:p-12 shadow-xl shadow-black/5 backdrop-blur-2xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:from-primary/10 dark:to-accent/10 dark:shadow-black/40 dark:ring-white/5 overflow-hidden relative flex flex-col items-center justify-center text-center sm:text-left sm:flex-row sm:items-center sm:justify-between gap-8"
+          style="animation-delay: 300ms;"
+        >
+          <!-- Mobile Background Asset -->
+          <div
+            class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 flex items-center justify-center"
+          >
+            <img src={featureSecure.src} alt="" class="w-full h-full object-contain" />
+          </div>
+
+          <!-- SVG Asset 4 (Desktop) -->
+          <div
+            class="hidden sm:block w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 opacity-90 group-hover:scale-110 transition-transform duration-700 relative z-10 shrink-0"
+          >
+            <img src={featureSecure.src} alt="Secure Transactions" class="w-full h-full object-contain" />
+          </div>
+          <div class="relative z-10 max-w-lg w-full text-center md:text-right mt-4 sm:mt-0">
+            <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-heading mb-4">
+              Transaksi Aman & Instan
+            </h3>
+            <p class="text-base sm:text-lg leading-relaxed text-muted dark:text-slate-300">
+              Mendukung berbagai metode pembayaran digital yang terenkripsi penuh. Pengalaman berbelanja tak pernah
+              semudah ini.
             </p>
           </div>
-          <a href="#download" class="shrink-0 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-500 ease-out hover:scale-105 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-primary">
-            Daftar Sekarang
-          </a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="tentang" class="scroll-mt-[72px]">
-    <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.82fr_1.18fr] md:py-20">
-      <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
-        Mengapa Sinar Farma?
-      </h2>
-      <div class="max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-        <p>
-          Sinar Farma adalah platform terintegrasi yang menghubungkan Anda dengan apotek terdekat. Kami memastikan setiap informasi ketersediaan obat akurat dan dapat diandalkan, sehingga Anda tidak perlu lagi berkeliling mencari obat yang sedang dibutuhkan.
-        </p>
-      </div>
+  <section id="tentang" class="scroll-mt-[72px] px-4 pt-8 pb-16 sm:px-6 md:pt-12 md:pb-32 relative overflow-x-clip">
+    <!-- Ambient Background Signature -->
+    <div
+      class="absolute top-0 left-0 -translate-y-1/3 -translate-x-1/4 h-[800px] w-[800px] rounded-full bg-primary/5 blur-[120px] pointer-events-none"
+      aria-hidden="true"
+    >
     </div>
-  </section>
 
-  <section aria-labelledby="aman-heading">
-    <div class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 md:pb-20">
-      <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-6 md:p-8 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
-        <h2
-          id="aman-heading"
-          class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
-        >
-          Akses Aman & Terpercaya.
-        </h2>
-        <p class="mt-4 max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Kami menjaga privasi dan keamanan data Anda dengan standar tinggi. Setiap detail informasi yang ditampilkan diverifikasi langsung dari apotek terkait.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="faq-heading">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
-      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-        <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade">
-          <h2
-            id="faq-heading"
-            class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
-          >
-            Yang Sering Ditanyakan.
-          </h2>
-          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-            Temukan jawaban untuk pertanyaan umum seputar peluncuran aplikasi Sinar Farma.
-          </p>
-        </div>
-        <div class="space-y-3">
-          {
-            faqs.map((faq, index) => (
-              <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10 transition-all duration-300 hover:ring-primary/30 hover:shadow-md" style={`animation-delay: ${index * 100}ms;`}>
-                <h3 class="font-semibold text-heading">{faq.question}</h3>
-                <p class="mt-2 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">{faq.answer}</p>
-              </article>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="download" class="scroll-mt-[72px] px-4 py-16 sm:px-6 md:py-24">
-    <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/20 bg-primary/90 px-6 py-12 text-white shadow-2xl shadow-primary/30 backdrop-blur-xl dark:bg-primary/40 md:px-12 md:py-16 transition-all duration-700 hover:shadow-primary/40">
-      <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/20 blur-3xl" aria-hidden="true"></div>
-      <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end relative z-10">
+    <div class="mx-auto max-w-7xl relative z-10">
+      <div
+        class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 items-center"
+      >
+        <!-- Story Side (Distinctive Typography) -->
         <div class="max-w-2xl">
-          <h2 class="font-heading text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
-            Bergabunglah dengan Daftar Tunggu.
+          <h2
+            class="font-heading text-4xl font-extrabold tracking-tighter text-heading text-balance md:text-6xl lg:text-7xl mb-8 leading-[1.1]"
+          >
+            Kesehatan Anda,<br /><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+              >Tanpa Kompromi.</span
+            >
           </h2>
-          <p class="mt-4 text-xl leading-8 text-white/90 text-pretty">
-            Jadilah orang pertama yang merasakan kemudahan mencari apotek dan obat. Kami akan memberitahu Anda segera setelah aplikasi dirilis.
-          </p>
-          <div class="mt-6 inline-flex rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-md ring-1 ring-white/20">
-            Status: Persiapan Peluncuran (Early Access)
+
+          <div class="space-y-8 text-muted dark:text-slate-300">
+            <p class="text-xl sm:text-2xl font-medium leading-relaxed text-heading">
+              Sinar Farma hadir sebagai garda terdepan dengan satu kepastian tak tertawar:
+              <em class="text-primary dark:text-primary-400 not-italic"
+                >Setiap keluarga berhak mendapatkan akses obat-obatan yang 100% murni, asli, dan aman.</em
+              >
+            </p>
+            <p class="text-lg leading-relaxed">
+              Kami bukan sekadar perantara digital. Sinar Farma adalah <strong
+                >jaringan apotek resmi terverifikasi</strong
+              > yang menerapkan protokol ketat. Mulai dari pabrik distributor resmi hingga ke tangan Anda, semua diawasi langsung
+              oleh apoteker berlisensi.
+            </p>
+            <div class="pl-6 border-l-4 border-primary/30">
+              <p class="text-lg font-medium italic text-heading">
+                "Bagi kami, menyerahkan obat ke tangan Anda bukanlah sekadar transaksi. Ini adalah wujud tanggung jawab
+                profesional kami untuk menjaga kesehatan orang-orang yang Anda cintai."
+              </p>
+            </div>
           </div>
         </div>
-        <Button
-          variant="secondary"
-          text="Kembali ke Atas"
-          href="#beranda"
-          class="border-white/30 bg-white/10 text-white backdrop-blur-md hover:border-white/50 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white transition-all duration-500 active:scale-95"
-        />
+
+        <!-- Pillars Side (Mini Bento Grid) -->
+        <div class="relative">
+          <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2">
+            <!-- Card 1: Wide (Spans 2 columns) -->
+            <div
+              class="group relative rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 bg-white/60 p-6 sm:p-8 shadow-xl shadow-black/5 backdrop-blur-3xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-slate-800/60 sm:col-span-2 overflow-hidden flex flex-col sm:flex-row items-center justify-center text-center sm:text-left min-h-[220px] sm:min-h-0"
+            >
+              <!-- Mobile Background Asset -->
+              <div
+                class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 flex items-center justify-center"
+              >
+                <img src={iconDistribution.src} class="w-full h-full object-contain" alt="" />
+              </div>
+
+              <div
+                class="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-700 group-hover:bg-emerald-500/20"
+                aria-hidden="true"
+              >
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 relative z-10 w-full mt-4 sm:mt-0"
+              >
+                <!-- Desktop Asset -->
+                <div
+                  class="hidden sm:flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-inner ring-1 ring-emerald-500/20 dark:from-emerald-900/40 dark:to-emerald-800/20 dark:text-emerald-400 transition-transform duration-500 group-hover:scale-110"
+                >
+                  <img src={iconDistribution.src} class="h-8 w-8" alt="Distribusi Resmi" />
+                </div>
+                <div class="w-full">
+                  <h3 class="font-heading text-xl sm:text-2xl font-bold text-heading">Distribusi Resmi</h3>
+                  <p class="text-base text-muted dark:text-slate-400 mt-2 leading-relaxed">
+                    Pasokan hanya dari Principal dan PBF bersertifikat BPOM.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Square (1 column) -->
+            <div
+              class="group relative rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 bg-white/60 p-6 sm:p-8 shadow-xl shadow-black/5 backdrop-blur-3xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-slate-800/60 sm:col-span-1 flex flex-col items-center justify-center text-center min-h-[220px] sm:min-h-[240px] overflow-hidden gap-4 sm:gap-6"
+            >
+              <!-- Mobile Background Asset -->
+              <div
+                class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 flex items-center justify-center"
+              >
+                <img src={iconPharmacist.src} class="w-full h-full object-contain" alt="" />
+              </div>
+
+              <div
+                class="absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-blue-500/10 blur-2xl transition-all duration-700 group-hover:bg-blue-500/20 group-hover:scale-150"
+                aria-hidden="true"
+              >
+              </div>
+
+              <!-- Desktop Asset -->
+              <div
+                class="hidden sm:flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 shadow-inner ring-1 ring-blue-500/20 dark:from-blue-900/40 dark:to-blue-800/20 dark:text-blue-400 relative z-10 transition-transform duration-500 group-hover:scale-110"
+              >
+                <img src={iconPharmacist.src} class="h-7 w-7" alt="Pengawasan Apoteker" />
+              </div>
+
+              <div class="relative z-10 w-full mt-4 sm:mt-0">
+                <h3 class="font-heading text-lg font-bold text-heading leading-tight">Pengawasan Apoteker</h3>
+                <p class="text-sm text-muted dark:text-slate-400 mt-2">Verifikasi ketat sebelum dikemas.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Square (1 column) -->
+            <div
+              class="group relative rounded-[2rem] sm:rounded-[2.5rem] border border-black/5 bg-white/60 p-6 sm:p-8 shadow-xl shadow-black/5 backdrop-blur-3xl ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-slate-800/60 sm:col-span-1 flex flex-col items-center justify-center text-center min-h-[220px] sm:min-h-[240px] overflow-hidden gap-4 sm:gap-6"
+            >
+              <!-- Mobile Background Asset -->
+              <div
+                class="sm:hidden absolute inset-0 m-auto w-[85%] h-[85%] opacity-15 pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12 flex items-center justify-center"
+              >
+                <img src={iconColdchain.src} class="w-full h-full object-contain" alt="" />
+              </div>
+
+              <div
+                class="absolute -left-8 -bottom-8 h-32 w-32 rounded-full bg-amber-500/10 blur-2xl transition-all duration-700 group-hover:bg-amber-500/20 group-hover:scale-150"
+                aria-hidden="true"
+              >
+              </div>
+
+              <!-- Desktop Asset -->
+              <div
+                class="hidden sm:flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 text-amber-600 shadow-inner ring-1 ring-amber-500/20 dark:from-amber-900/40 dark:to-amber-800/20 dark:text-amber-400 relative z-10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"
+              >
+                <img src={iconColdchain.src} class="h-7 w-7" alt="Penyimpanan Standar" />
+              </div>
+
+              <div class="relative z-10 w-full mt-4 sm:mt-0">
+                <h3 class="font-heading text-lg font-bold text-heading leading-tight">Penyimpanan Standar</h3>
+                <p class="text-sm text-muted dark:text-slate-400 mt-2">Gudang Cold-Chain jaga efikasi maksimal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
