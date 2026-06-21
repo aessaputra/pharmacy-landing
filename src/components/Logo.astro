@@ -1,9 +1,11 @@
 ---
 import { SITE } from 'astrowind:config';
+import logoImage from '~/assets/images/sinar-farma-sf-02-squircle.svg';
 ---
 
 <span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white flex items-center gap-2.5"
 >
+  <img src={logoImage.src} alt="Logo Sinar Farma" class="w-8 h-8 drop-shadow-sm" />
   {SITE?.name}
 </span>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sinar Farma SF squircle logo</title>
+  <desc id="desc">A compact SF lettermark inside a teal and green squircle, designed for app icons, favicon, and small sizes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="56" x2="442" y2="454" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16A34A"/>
+      <stop offset="0.52" stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#0F4C81"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="128" y1="88" x2="393" y2="408" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#CFFAFE" stop-opacity="0.88"/>
+    </linearGradient>
+  </defs>
+  <rect x="48" y="48" width="416" height="416" rx="116" fill="url(#bg)"/>
+  <path d="M112 96c74-38 180-42 276 6" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" opacity="0.18"/>
+  <g fill="url(#shine)">
+    <path d="M260 151H162c-45 0-76 28-76 67 0 34 22 56 67 68l57 15c25 7 37 15 37 33 0 20-17 33-45 33H100v-57h96c14 0 22-5 22-15s-8-14-26-19l-55-15c-52-14-80-41-80-84 0-51 42-90 104-90h99v64Z"/>
+    <path d="M292 151h158v59h-91v62h78v58h-78v97h-67V151Z"/>
+  </g>
+  <path d="M122 421h268" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.28"/>
+</svg>

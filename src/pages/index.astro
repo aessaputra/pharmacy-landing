@@ -4,97 +4,95 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
 const metadata = {
-  title: 'Sinar Farma — Aplikasi Apotek',
+  title: 'Sinar Farma — Akses Apotek',
   description:
-    'Landing page aplikasi Sinar Farma untuk mengenal kebutuhan apotek harian secara ringkas, jelas, dan aman.',
+    'Sinar Farma mempermudah pencarian obat dan layanan apotek langsung dari ponsel Anda. Dapatkan akses awal sekarang.',
   ignoreTitleTemplate: true,
 };
 
 const values = [
   {
-    title: 'Terpercaya',
-    note: 'Bahasa dibatasi pada informasi umum yang mudah dicek kembali.',
+    title: 'Informasi Terverifikasi',
+    note: 'Sumber data dicek ketat untuk memastikan Anda hanya mendapat panduan yang akurat dan aman.',
   },
   {
-    title: 'Ramah',
-    note: 'Susunan pendek membantu pengunjung membaca tanpa istilah rumit.',
+    title: 'Bebas Distraksi',
+    note: 'Desain bersih dan terfokus, tanpa iklan atau menu rumit, khusus untuk membaca cepat di ponsel.',
   },
   {
-    title: 'Cepat',
-    note: 'Ringkasan dan arahan resmi disusun untuk layar ponsel.',
+    title: 'Secepat Kilat',
+    note: 'Temukan rute dan detail apotek terdekat dalam hitungan detik saat keadaan mendesak.',
   },
 ];
 
 const steps = [
   {
-    title: 'Cari kebutuhan',
-    note: 'Mulai dari ringkasan umum tentang kebutuhan apotek harian yang tersedia di halaman ini.',
+    title: 'Daftar Akses Awal',
+    note: 'Jadilah yang pertama mencoba Sinar Farma dengan mendaftar di halaman ini.',
   },
   {
-    title: 'Baca ringkasan',
-    note: 'Gunakan teks singkat untuk memahami fungsi dasar aplikasi sebelum mengikuti arahan berikutnya.',
+    title: 'Pantau Email Anda',
+    note: 'Kami akan mengirimkan notifikasi dan tautan unduhan aman saat rilis resmi tiba.',
   },
   {
-    title: 'Ikuti info resmi',
-    note: 'Saat kanal aplikasi diumumkan, bagian download akan menjadi titik awal yang aman.',
+    title: 'Temukan Kebutuhan',
+    note: 'Gunakan aplikasi untuk menemukan ketersediaan obat dan info apotek dengan mudah.',
   },
 ];
 
 const faqs = [
   {
-    question: 'Apakah tautan aplikasi sudah tersedia?',
-    answer: 'Belum. Halaman ini menyiapkan tempat informasi resmi tanpa menambahkan tautan yang belum diverifikasi.',
+    question: 'Kapan aplikasi Sinar Farma bisa diunduh?',
+    answer: 'Saat ini kami masih dalam tahap persiapan akhir. Daftarkan diri Anda untuk mendapat pemberitahuan pertama saat aplikasi siap diunduh.',
   },
   {
-    question: 'Apa yang bisa dilihat di halaman ini?',
-    answer: 'Pengunjung dapat membaca gambaran aplikasi, cara memakai informasi, dan status download.',
+    question: 'Apakah Sinar Farma berbayar?',
+    answer: 'Tidak, aplikasi ini sepenuhnya gratis untuk membantu Anda menemukan apotek dan ketersediaan obat secara instan.',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
-  <section id="beranda" class="relative overflow-hidden scroll-mt-[72px]">
-    <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-primary/8 dark:bg-primary/10" aria-hidden="true"></div>
-    <div
-      class="absolute left-1/2 top-18 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/14 blur-3xl"
-      aria-hidden="true"
-    >
-    </div>
+  <section id="beranda" class="relative overflow-x-clip scroll-mt-[72px]">
+    <!-- Aurora UI Mesh Glows -->
+    <div class="pointer-events-none absolute -left-20 top-0 -z-10 h-[24rem] w-[24rem] rounded-full bg-primary/15 blur-[100px] dark:bg-primary/20" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute left-1/4 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-[120px] dark:bg-accent/15" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute right-0 top-10 -z-10 h-[20rem] w-[20rem] rounded-full bg-primary/10 blur-[80px] dark:bg-primary/10" aria-hidden="true"></div>
+
     <div
       class="mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-8 sm:px-6 md:pb-16 md:pt-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(18rem,0.52fr)] lg:items-start lg:gap-12 lg:pb-20 lg:pt-14"
     >
       <div class="max-w-3xl">
         <h1
-          class="font-heading text-4xl font-bold leading-tight tracking-[-0.025em] text-heading text-balance sm:text-5xl lg:text-6xl"
+          class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade font-heading text-5xl font-extrabold leading-tight tracking-tighter text-heading text-balance sm:text-6xl lg:text-7xl"
         >
-          Aplikasi apotek untuk kebutuhan harian.
+          Akses Apotek Harian dalam <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Satu Ketukan.</span>
         </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Sinar Farma membantu pengunjung memahami kebutuhan apotek harian lewat tampilan ponsel yang ringkas. Halaman
-          ini menjaga informasi tetap umum sampai detail resmi tersedia.
+        <p class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-6 max-w-2xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]" style="animation-delay: 100ms;">
+          Sinar Farma mempermudah pencarian obat dan layanan apotek langsung dari ponsel Anda. Bersiaplah untuk peluncuran resmi kami.
         </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mt-8 flex flex-col gap-3 sm:flex-row" style="animation-delay: 200ms;">
           <Button
             variant="primary"
-            text="Download aplikasi"
+            text="Dapatkan Akses Awal"
             href="#download"
-            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-all duration-500 ease-out hover:-translate-y-1 active:scale-95 hover:shadow-lg hover:shadow-primary/30"
           />
           <Button
             variant="secondary"
-            text="Fitur"
+            text="Pelajari Fitur"
             href="#fitur"
-            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary transition-all duration-500 ease-out hover:bg-primary/5 active:scale-95"
           />
         </div>
       </div>
 
-      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="mx-auto w-full max-w-[18rem] lg:mr-0 lg:max-w-[19rem]">
+      <aside aria-label="Pratinjau aplikasi Sinar Farma" class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mx-auto w-full max-w-[18rem] lg:mr-0 lg:max-w-[19rem]" style="animation-delay: 300ms;">
         <div class="relative">
-          <div class="absolute -right-8 top-10 -z-10 h-32 w-32 rounded-full bg-accent/20 blur-3xl" aria-hidden="true">
+          <div class="absolute -right-12 top-4 -z-10 h-40 w-40 rounded-full bg-primary/20 blur-[64px] transition-all duration-1000 ease-in-out hover:scale-110" aria-hidden="true">
           </div>
           <div
-            class="absolute -bottom-6 -left-8 -z-10 h-36 w-36 rounded-full bg-primary/15 blur-3xl"
+            class="absolute -bottom-8 -left-12 -z-10 h-48 w-48 rounded-full bg-accent/20 blur-[64px] transition-all duration-1000 ease-in-out hover:scale-110"
             aria-hidden="true"
           >
           </div>
@@ -118,77 +116,67 @@ const faqs = [
     </div>
   </section>
 
-  <section aria-labelledby="nilai-heading">
-    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-22">
-      <div class="max-w-2xl">
-        <h2
-          id="nilai-heading"
-          class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
-        >
-          Dibuat untuk membaca cepat.
+  <section id="fitur" class="relative scroll-mt-[72px]">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
+      <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mb-12 max-w-3xl">
+        <h2 class="font-heading text-4xl font-extrabold tracking-tight text-heading text-balance md:text-5xl">
+          Keunggulan Sinar Farma
         </h2>
-        <p class="mt-4 text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Nilai halaman dijaga sederhana: jelas, dekat dengan kebutuhan umum, dan tidak melampaui informasi resmi.
+        <p class="mt-4 text-xl leading-8 text-muted dark:text-slate-400">
+          Dirancang untuk memberikan efisiensi maksimal dalam mencari kebutuhan obat dan apotek.
         </p>
       </div>
 
-      <div class="mt-8 grid gap-4 lg:grid-cols-[1fr_0.88fr_1.12fr]">
-        {
-          values.map((value) => (
-            <article class="rounded-xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-5">
-              <h3 class="font-heading text-xl font-bold tracking-[-0.015em] text-heading">{value.title}</h3>
-              <p class="mt-2 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">{value.note}</p>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section id="fitur" class="scroll-mt-[72px]">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
-      <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <div>
-          <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
-            Fitur ringkas.
-          </h2>
-          <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-            Bagian ini menampilkan fitur utama yang membantu pengunjung memahami aplikasi Sinar Farma.
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[240px]">
+        <!-- Box 1: Large -->
+        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 lg:col-span-2 md:row-span-2 rounded-[2.5rem] border border-white/60 bg-white/60 p-8 sm:p-12 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/15 dark:border-slate-700/50 dark:bg-slate-800/60 dark:ring-white/10 overflow-hidden relative flex flex-col justify-end">
+          <div class="absolute -right-10 -bottom-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" aria-hidden="true"></div>
+          <h3 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-heading mb-4 relative z-10">Pencarian Secepat Kilat</h3>
+          <p class="text-lg leading-relaxed text-muted dark:text-slate-400 max-w-md relative z-10">
+            Temukan rute dan detail apotek terdekat dalam hitungan detik saat keadaan mendesak. Antarmuka kami bebas distraksi, khusus untuk membaca cepat di ponsel.
           </p>
-        </div>
+        </article>
 
-        <ol class="space-y-3">
-          {
-            steps.map((step, index) => (
-              <li class="rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10">
-                <div class="flex gap-4">
-                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-secondary dark:text-primary">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 class="font-semibold text-heading">{step.title}</h3>
-                    <p class="mt-1 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">
-                      {step.note}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            ))
-          }
-        </ol>
+        <!-- Box 2: Small -->
+        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 lg:col-span-2 rounded-[2.5rem] border border-white/60 bg-primary/5 p-8 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-primary/15 dark:border-primary/20 dark:bg-primary/10 dark:ring-white/10 flex flex-col justify-end" style="animation-delay: 100ms;">
+          <h3 class="font-heading text-2xl font-bold tracking-tight text-primary dark:text-primary mb-2">Informasi Terverifikasi</h3>
+          <p class="text-base text-muted dark:text-slate-400">
+            Sumber data dicek ketat untuk memastikan panduan akurat.
+          </p>
+        </article>
+
+        <!-- Box 3: Small -->
+        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-1 lg:col-span-2 rounded-[2.5rem] border border-white/60 bg-white/60 p-8 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-primary/15 dark:border-slate-700/50 dark:bg-slate-800/60 dark:ring-white/10 flex flex-col justify-end" style="animation-delay: 200ms;">
+          <h3 class="font-heading text-2xl font-bold tracking-tight text-heading mb-2">Akses Awal</h3>
+          <p class="text-base text-muted dark:text-slate-400">
+            Jadilah yang pertama mencoba dengan mendaftar di halaman ini.
+          </p>
+        </article>
+
+        <!-- Box 4: Wide -->
+        <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade md:col-span-2 lg:col-span-4 rounded-[2.5rem] border border-white/60 bg-gradient-to-r from-primary/5 to-accent/5 p-8 sm:p-10 shadow-xl shadow-primary/5 backdrop-blur-xl ring-1 ring-white/50 transition-all duration-500 ease-out hover:scale-[1.01] hover:shadow-primary/15 dark:border-slate-700/50 dark:from-primary/10 dark:to-accent/10 dark:ring-white/10 flex flex-col sm:flex-row items-center justify-between gap-8" style="animation-delay: 300ms;">
+          <div>
+            <h3 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-heading mb-2">Pantau Email Anda</h3>
+            <p class="text-lg text-muted dark:text-slate-400">
+              Kami akan mengirimkan notifikasi dan tautan unduhan aman saat rilis resmi tiba.
+            </p>
+          </div>
+          <a href="#download" class="shrink-0 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-white shadow-sm transition-all duration-500 ease-out hover:scale-105 hover:bg-secondary focus-visible:outline-2 focus-visible:outline-primary">
+            Daftar Sekarang
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="tentang" class="scroll-mt-[72px]">
-    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.82fr_1.18fr] md:py-20">
+    <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 md:grid-cols-[0.82fr_1.18fr] md:py-20">
       <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl">
-        Tentang Sinar Farma.
+        Mengapa Sinar Farma?
       </h2>
       <div class="max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
         <p>
-          Sinar Farma adalah halaman pengantar aplikasi apotek untuk kebutuhan umum. Konten dibuat singkat agar
-          pengunjung dapat memahami arah aplikasi sebelum mengikuti informasi resmi berikutnya.
+          Sinar Farma adalah platform terintegrasi yang menghubungkan Anda dengan apotek terdekat. Kami memastikan setiap informasi ketersediaan obat akurat dan dapat diandalkan, sehingga Anda tidak perlu lagi berkeliling mencari obat yang sedang dibutuhkan.
         </p>
       </div>
     </div>
@@ -196,16 +184,15 @@ const faqs = [
 
   <section aria-labelledby="aman-heading">
     <div class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 md:pb-20">
-      <div class="rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-6 md:p-8">
+      <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade rounded-2xl border border-primary/15 bg-[var(--aw-color-surface-muted)] p-6 md:p-8 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5">
         <h2
           id="aman-heading"
           class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
         >
-          Batas informasi dijaga.
+          Akses Aman & Terpercaya.
         </h2>
         <p class="mt-4 max-w-3xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-          Halaman ini hanya memakai informasi umum dan status yang aman ditampilkan. Detail resmi dapat ditambahkan
-          setelah sumber Sinar Farma tersedia.
+          Kami menjaga privasi dan keamanan data Anda dengan standar tinggi. Setiap detail informasi yang ditampilkan diverifikasi langsung dari apotek terkait.
         </p>
       </div>
     </div>
@@ -214,21 +201,21 @@ const faqs = [
   <section aria-labelledby="faq-heading">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
       <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
-        <div>
+        <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade">
           <h2
             id="faq-heading"
             class="font-heading text-3xl font-bold tracking-[-0.02em] text-heading text-balance md:text-4xl"
           >
-            Pertanyaan singkat.
+            Yang Sering Ditanyakan.
           </h2>
           <p class="mt-4 max-w-xl text-lg leading-8 text-muted text-pretty dark:text-[var(--aw-color-text-default)]">
-            Jawaban tetap ringkas agar tidak menambah janji yang belum terverifikasi.
+            Temukan jawaban untuk pertanyaan umum seputar peluncuran aplikasi Sinar Farma.
           </p>
         </div>
         <div class="space-y-3">
           {
-            faqs.map((faq) => (
-              <article class="rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10">
+            faqs.map((faq, index) => (
+              <article class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade rounded-xl bg-[var(--aw-color-surface)] p-5 ring-1 ring-primary/10 transition-all duration-300 hover:ring-primary/30 hover:shadow-md" style={`animation-delay: ${index * 100}ms;`}>
                 <h3 class="font-semibold text-heading">{faq.question}</h3>
                 <p class="mt-2 text-sm leading-6 text-muted dark:text-[var(--aw-color-text-default)]">{faq.answer}</p>
               </article>
@@ -240,23 +227,25 @@ const faqs = [
   </section>
 
   <section id="download" class="scroll-mt-[72px] px-4 py-16 sm:px-6 md:py-24">
-    <div class="mx-auto max-w-7xl rounded-2xl bg-primary px-6 py-10 text-white dark:bg-secondary md:px-10 md:py-12">
-      <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+    <div class="intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/20 bg-primary/90 px-6 py-12 text-white shadow-2xl shadow-primary/30 backdrop-blur-xl dark:bg-primary/40 md:px-12 md:py-16 transition-all duration-700 hover:shadow-primary/40">
+      <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/20 blur-3xl" aria-hidden="true"></div>
+      <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-end relative z-10">
         <div class="max-w-2xl">
-          <h2 class="font-heading text-3xl font-bold tracking-[-0.02em] text-balance md:text-4xl">
-            Download aplikasi saat rilis resmi tersedia.
+          <h2 class="font-heading text-4xl font-extrabold tracking-tight text-balance md:text-5xl">
+            Bergabunglah dengan Daftar Tunggu.
           </h2>
-          <p class="mt-4 text-lg leading-8 text-white/90 text-pretty">
-            Bagian ini disiapkan sebagai titik status. Tautan resmi akan ditampilkan setelah informasi Sinar Farma
-            tersedia.
+          <p class="mt-4 text-xl leading-8 text-white/90 text-pretty">
+            Jadilah orang pertama yang merasakan kemudahan mencari apotek dan obat. Kami akan memberitahu Anda segera setelah aplikasi dirilis.
           </p>
-          <p class="mt-3 text-sm leading-6 text-white/80">Status: menunggu pengumuman resmi Sinar Farma.</p>
+          <div class="mt-6 inline-flex rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-md ring-1 ring-white/20">
+            Status: Persiapan Peluncuran (Early Access)
+          </div>
         </div>
         <Button
           variant="secondary"
-          text="Kembali ke atas"
+          text="Kembali ke Atas"
           href="#beranda"
-          class="border-white bg-white text-secondary hover:border-white hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white dark:border-white dark:bg-white dark:text-secondary"
+          class="border-white/30 bg-white/10 text-white backdrop-blur-md hover:border-white/50 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white transition-all duration-500 active:scale-95"
         />
       </div>
     </div>

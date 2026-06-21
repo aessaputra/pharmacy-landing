@@ -31,6 +31,18 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
     },
+    "svg-animations": {
+      "source": "supermemoryai/skills",
+      "sourceType": "github",
+      "skillPath": "svg-animations/SKILL.md",
+      "computedHash": "f25711af04ba7a0f8e662f41cdf707423102eef303dfd3dc7d48d35bb83c7ec4"
+    },
+    "svg-illustration": {
+      "source": "narumiruna/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/svg-illustration/SKILL.md",
+      "computedHash": "d0cb2a3caff377a745555d60b89a7f2e8426a528c4d9df66055c99e731a357d7"
+    },
     "tailwind-design-system": {
       "source": "wshobson/agents",
       "sourceType": "github",
