@@ -1,23 +1,23 @@
----
+﻿---
 /**
  * Shared <Image /> wrapper.
  *
  * Behaviour:
- *   • Detectable CDN URL (Unsplash, Cloudinary, Imgix…) → rewritten with
+ *   â€¢ Detectable CDN URL (Unsplash, Cloudinary, Imgixâ€¦) â†’ rewritten with
  *     CDN-side parameters via `transformUrl` from `unpic` and emitted as a
  *     plain <img> served straight from the source. No download, no Sharp.
- *   • Local image (ESM import or `~/assets/...` path) → delegated to Astro's
+ *   â€¢ Local image (ESM import or `~/assets/...` path) â†’ delegated to Astro's
  *     native <Image /> from `astro:assets`, which optimizes through Sharp.
  *
  * Layout modes (control how the image fills its container):
- *   • `constrained` (default) — image scales down to fit, never above its own
+ *   â€¢ `constrained` (default) â€” image scales down to fit, never above its own
  *     pixel dimensions. Heroes, brand logos, blog thumbnails.
- *   • `responsive` — image always 100% of container width, height auto from
+ *   â€¢ `responsive` â€” image always 100% of container width, height auto from
  *     aspect ratio. Side-by-side feature illustrations.
- *   • `fullWidth` — image spans the container width, fixed pixel height.
+ *   â€¢ `fullWidth` â€” image spans the container width, fixed pixel height.
  *     Full-bleed banners.
- *   • `fixed` — exact pixel dimensions, no scaling. Avatars and icons.
- *   • `cover` — fills the parent (max 100%) and crops with object-fit.
+ *   â€¢ `fixed` â€” exact pixel dimensions, no scaling. Avatars and icons.
+ *   â€¢ `cover` â€” fills the parent (max 100%) and crops with object-fit.
  *     Absolutely-positioned overlays (cards, step illustrations).
  *
  * Accessibility:
@@ -84,7 +84,7 @@ if (resolved && typeof resolved === 'object' && 'width' in resolved && 'height' 
 
 const aspectRatio = w && h ? w / h : undefined;
 
-// --- Layout → inline style mapping -----------------------------------------
+// --- Layout â†’ inline style mapping -----------------------------------------
 const px = (v?: number) => (v == null ? undefined : `${v}px`);
 const declarations: Array<[string, string | undefined]> = [
   ['object-fit', 'cover'],
